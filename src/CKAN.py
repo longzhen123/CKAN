@@ -281,8 +281,8 @@ def train(args, is_topk=False):
         eval_auc, eval_acc = eval_ctr(model, eval_set, user_ripple_sets, item_ripple_sets, args.batch_size)
         test_auc, test_acc = eval_ctr(model, test_set, user_ripple_sets, item_ripple_sets, args.batch_size)
 
-        print('epoch: %d \t train_auc: %.3f \t train_acc: %.3f \t '
-              'eval_auc: %.3f \t eval_acc: %.3f \t test_auc: %.3f \t test_acc: %.3f \t' %
+        print('epoch: %d \t train_auc: %.4f \t train_acc: %.4f \t '
+              'eval_auc: %.4f \t eval_acc: %.4f \t test_auc: %.4f \t test_acc: %.4f \t' %
               ((epoch + 1), train_auc, train_acc, eval_auc, eval_acc, test_auc, test_acc), end='\t')
 
         precision_list = []
@@ -303,8 +303,8 @@ def train(args, is_topk=False):
 
     indices = eval_auc_list.index(max(eval_auc_list))
     print(args.dataset, end='\t')
-    print('train_auc: %.3f \t train_acc: %.3f \t eval_auc: %.3f \t eval_acc: %.3f \t '
-          'test_auc: %.3f \t test_acc: %.3f \t' %
+    print('train_auc: %.4f \t train_acc: %.4f \t eval_auc: %.4f \t eval_acc: %.4f \t '
+          'test_auc: %.4f \t test_acc: %.4f \t' %
           (train_auc_list[indices], train_acc_list[indices], eval_auc_list[indices], eval_acc_list[indices],
            test_auc_list[indices], test_acc_list[indices]), end='\t')
 
